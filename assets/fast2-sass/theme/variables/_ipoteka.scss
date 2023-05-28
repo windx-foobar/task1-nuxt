@@ -1,0 +1,31 @@
+$custom-control-indicator-size: px2rem(20);
+$form-group-margin-bottom: px2rem(20);
+
+$col-form-label-color: #4b535a;
+$col-form-label-font-weight: 500;
+$col-form-label-padding-bottom: 0;
+$col-form-label-font-size: px2rem(11);
+
+$table-accent-bg: #f1f8ff;
+
+$layout-inner-background: whitesmoke;
+
+$theme-colors: (
+  "blue": #1774e2,
+  "orange": #ffbb38,
+  "gray": #949899,
+);
+
+//
+$appX: 20 !default;
+$sidenav: 300 !default;
+$sidenavMin: 100 !default;
+$navbar: 60 !default;
+$maxWidt: (1240 + $sidenav) !default;
+$rightWidth: (320 - 20) !default;
+$contentWidth: 1360 !default;
+
+$contentRight: $appX * 20 !default;
+
+$contentRightLg: $appX * 17 !default;
+$contentRightXl: $contentRight !default;

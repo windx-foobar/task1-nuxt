@@ -1,0 +1,51 @@
+.isDev #__nuxt {
+  &:before {
+    background: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 8px;
+  }
+
+  @include breakpoint(xs) {
+    &:before {
+      background-color: yellow;
+      content: 'xs';
+    }
+  }
+  @include breakpoint(sm) {
+    &:before {
+      background-color: red;
+      content: 'sm';
+    }
+  }
+  @include breakpoint(md) {
+    &:before {
+      background-color: blue;
+      content: 'md';
+      color: #fff;
+    }
+  }
+  @include breakpoint(lg) {
+    &:before {
+      background-color: orange;
+      content: 'lg';
+      color: #fff;
+    }
+  }
+  @include breakpoint(xl) {
+    &:before {
+      background-color: gray;
+      content: 'xl';
+      color: #fff;
+    }
+  }
+  @include breakpoint(xxl) {
+    &:before {
+      background-color: #00bff3;
+      content: 'xxl';
+      color: #fff;
+    }
+  }
+}

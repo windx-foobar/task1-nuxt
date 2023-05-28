@@ -1,0 +1,55 @@
+.shCircle {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.sh-icon {
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: red;
+
+  &.hovered {
+    .sh-icon-wraper {
+      @include transition;
+      &.filled {
+        opacity: 0;
+      }
+    }
+  }
+
+  .sh-icon-wraper {
+    //   // position: absolute;
+    //   // left: 0;
+    //   // top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //   width: 100%;
+    //   height: auto;
+    position: relative;
+    // background: yellow;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+
+    .stroke {
+      transition: stroke 0.15s ease-in-out;
+      stroke: currentColor;
+    }
+    .fill {
+      transition: fill 0.15s ease-in-out;
+      fill: currentColor;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.vue-notification {
+  padding: $alert-padding-y $alert-padding-x;
+  margin: 0 0 $alert-margin-bottom 0 !important;
+  text-align: center !important;
+  // font-size: $alert-font-size !important;
+
+  color: $white !important;
+  background: $primary !important;
+  border: none !important;
+
+  &.warn {
+    background: $warning !important;
+  }
+
+  &.error {
+    background: $danger !important;
+  }
+
+  &.success {
+    background: $success !important;
+  }
+}

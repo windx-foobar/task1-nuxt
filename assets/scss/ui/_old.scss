@@ -1,0 +1,262 @@
+// @include scroll('body');
+
+@use "sass:list";
+
+.multiselect-custom {
+  &.cheched {
+    .multiselect__option {
+      padding-left: px2rem(14 + 6 * 2);
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: px2rem(12);
+        left: px2rem(6);
+        display: block;
+        width: px2rem(14);
+        height: px2rem(14);
+        pointer-events: none;
+        content: "";
+        background-color: $custom-control-indicator-bg;
+        border: $custom-control-indicator-border-color solid $custom-control-indicator-border-width;
+        @include box-shadow($custom-control-indicator-box-shadow);
+        @include border-radius($custom-checkbox-indicator-border-radius);
+      }
+
+      &::after {
+        position: absolute;
+        top: px2rem(12);
+        left: px2rem(6);
+        right: auto;
+        display: block;
+        width: px2rem(14);
+        height: px2rem(14);
+        content: "";
+        padding: 0;
+        background: no-repeat list.slash(50%, $custom-control-indicator-bg-size);
+      }
+
+      &.multiselect__option--selected {
+        &::before {
+          background-color: $custom-control-indicator-checked-bg;
+        }
+
+        &::after {
+          background-image: $custom-checkbox-indicator-icon-checked;
+        }
+      }
+    }
+  }
+  .multiselect__tags {
+    padding: 0.5rem 2rem 0 1rem;
+  }
+
+  .multiselect__tag {
+    background: rgba(222, 226, 230, 0.4);
+    color: #231f20;
+    margin-bottom: 0;
+  }
+
+  .multiselect__tag-icon {
+    &:hover {
+      background: rgba(222, 226, 230, 0.4);
+
+      &::after {
+        color: #231f20;
+      }
+    }
+
+    &::after {
+      color: #231f20;
+    }
+  }
+
+  &_option_hidden {
+    .multiselect__option {
+      display: none;
+    }
+  }
+}
+
+.common-upload-files {
+  // min-height: px2rem(200);
+  .custom-file-label {
+    background: transparent;
+    border: 1px dashed rgba($primary, 0.2);
+    min-height: px2rem(200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px dashed rgba($primary, 0.8);
+    }
+  }
+
+  .custom-file-label::after {
+    display: none !important;
+  }
+}
+
+.v-hide {
+  display: none !important;
+}
+
+@include scroll(".multiselect__content-wrapper");
+.multiselect__option {
+  white-space: initial !important;
+}
+
+.sh-multiselect {
+  &__spinner {
+    position: absolute;
+    right: px2rem(4-1);
+    top: px2rem(10);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: $input-height;
+    height: initial;
+    padding: px2rem(4-1) px2rem(4) 0;
+
+    &__tag {
+      background: rgba($gray-600, 0.15);
+      border-radius: px2rem(3);
+      padding: 0 px2rem(8);
+      margin: 0 px2rem(8) px2rem(4-1) 0;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      font-size: 1rem;
+      min-height: px2rem(32);
+      cursor: pointer;
+
+      .sh-icon {
+        margin-left: px2rem(12);
+      }
+    }
+  }
+
+  &__input {
+    border: none;
+    background: transparent;
+    padding: $input-padding-y $input-padding-x;
+    height: px2rem(40 - 2 - 8);
+    flex: 1;
+    width: inherit;
+    max-width: none;
+    // background: yellow;
+    padding: 0 0 0 px2rem(16-4);
+  }
+
+  &__options {
+    width: 100%;
+    max-width: inherit;
+    margin: 0;
+
+    .arrow,
+    &:after,
+    &:before {
+      display: none;
+    }
+
+    .popover-body {
+      padding: 0;
+    }
+
+    &__element {
+      height: px2rem(40);
+      display: flex;
+      align-items: center;
+      padding: 0 px2rem(20);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.bUpload {
+  border: 1px dashed transparent;
+  &.empty {
+    border-color: rgba($primary, 0.2);
+    border-radius: px2rem(6);
+    min-height: px2rem(200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.sm {
+      min-height: px2rem(100);
+    }
+  }
+
+  &.drop-active {
+    border-color: rgba($primary, 0.8);
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__table {
+    td {
+      vertical-align: middle;
+      padding: px2rem(4);
+    }
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    background: $white;
+    min-height: px2rem(40);
+    padding: px2rem(4);
+    margin-bottom: px2rem(20);
+
+    border: 1px solid rgba($gray-600, 0.4);
+    border-radius: px2rem(3);
+
+    &__popover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 0;
+      padding: 0;
+
+      .arrow {
+        display: none;
+      }
+    }
+
+    &__icon {
+      width: px2rem(32);
+      height: px2rem(32);
+      display: flex;
+      justify-content: center;
+      border-radius: px2rem(3);
+      background: $gray-100;
+      color: $gray-600;
+      align-items: center;
+    }
+
+    &__name {
+      flex: 1;
+      margin: 0 0 0 px2rem(12);
+      color: $gray-600;
+    }
+
+    &__del {
+      color: $gray-600;
+    }
+  }
+}

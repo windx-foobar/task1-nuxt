@@ -1,0 +1,315 @@
+.toggle .sidenav-inner.ps {
+  overflow: visible !important;
+
+  .level0 .sidenav-item {
+    .level0-icon + div {
+      display: none;
+    }
+    .open-icon {
+      display: none;
+    }
+    .sidenav-menu {
+      display: none;
+    }
+  }
+
+  .sidenav-menu:after {
+    display: none;
+  }
+
+  .level0 .sidenav-item {
+    position: relative;
+
+    & > .sidenav-link {
+      padding-right: 0;
+      width: px2rem($sidenavMin);
+    }
+
+    .level1 .sidenav-link {
+      padding-left: px2rem(8) !important;
+    }
+
+    &.active {
+      &:hover {
+        .level0-icon + div {
+          background: $sidenav-link-toggle-background;
+        }
+      }
+    }
+
+    &:hover {
+      .level0-icon + div {
+        display: block !important;
+        position: absolute;
+        left: px2rem($sidenavMin - 4);
+        background: $layout-sidenav-background; //$sidenav-link-toggle-background;
+        width: px2rem($sidenav - $sidenavMin);
+        padding: px2rem(16) px2rem(16) px2rem(16) px2rem(8);
+      }
+
+      .open-icon {
+        display: block;
+        position: absolute;
+        left: px2rem($sidenav - 20);
+      }
+
+      > .sidenav-menu {
+        display: block !important;
+        position: absolute;
+        width: px2rem($sidenav - $sidenavMin);
+        left: px2rem($sidenavMin);
+        background: $layout-sidenav-background;
+
+        &.to-top {
+          bottom: 0;
+        }
+
+        .sidenav-item {
+          width: px2rem($sidenav - $sidenavMin);
+
+          .sidenav-link {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .level0 .level1 .sidenav-item {
+    .open-icon {
+      display: block;
+      position: absolute;
+      left: px2rem($sidenav - $sidenavMin - 16);
+    }
+    &:hover {
+      > .sidenav-menu {
+        display: block !important;
+        position: absolute;
+        width: px2rem($sidenav - $sidenavMin);
+        top: 0;
+        left: px2rem($sidenav - $sidenavMin);
+        background: $layout-sidenav-background;
+
+        // .sidenav-item {
+        // width: px2rem($sidenav - $sidenavMin);
+        // }
+      }
+    }
+  }
+}
+
+.level1 .sidenav-item {
+  &.active {
+    background: $sidenav-item-level1-background;
+  }
+}
+
+.sidenav-item {
+  // width: px2rem($sidenav);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  flex-direction: column;
+  @include transition();
+
+  .sidenav-toggle .open-icon .fill {
+    fill: $sidenav-open-icon;
+  }
+
+  .sidenav-link {
+    padding: px2rem(16) px2rem(30) px2rem(16) px2rem(16);
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    font-weight: normal;
+    font-size: 1rem;
+    color: $sidenav-link;
+    line-height: 1.5rem;
+    width: px2rem($sidenav);
+
+    &:hover {
+      color: $sidenav-link-hover;
+      text-decoration: none;
+
+      .fill {
+        fill: $sidenav-link-hover;
+      }
+      .stroke {
+        stroke: $sidenav-link-hover;
+      }
+    }
+
+    .fill {
+      fill: $sidenav-link;
+    }
+    .stroke {
+      stroke: $sidenav-link;
+    }
+
+    .level0-icon {
+      position: relative;
+      left: px2rem(-100);
+      @include transition;
+    }
+
+    .toggle & {
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+
+      .level0-icon {
+        left: 0;
+        display: block;
+        margin: 0 px2rem((96 - 24 + 2) * 0.5) 0 px2rem((96 - 10 - 24) * 0.5);
+      }
+
+      & > div {
+        // display: none;
+      }
+    }
+  }
+  $toggle-padding: px2rem(10+24+40);
+
+  .level0 > & .sidenav-link {
+    padding-left: 1.875rem;
+  }
+  .layout-sidenav:not(.toggle) .level1 > & .sidenav-link {
+    padding-left: 2.875rem;
+    .toggle & {
+      padding-left: calc(2.875rem + #{$toggle-padding});
+    }
+  }
+  .layout-sidenav:not(.toggle) .level2 > & .sidenav-link {
+    padding-left: 3.875rem;
+    .toggle & {
+      padding-left: calc(3.875rem + #{$toggle-padding});
+    }
+  }
+  .level3 > & .sidenav-link {
+    padding-left: 4.875rem;
+    .toggle & {
+      padding-left: calc(4.875rem + #{$toggle-padding});
+    }
+  }
+  .level4 > & .sidenav-link {
+    padding-left: 5.875rem;
+    .toggle & {
+      padding-left: calc(5.875rem + #{$toggle-padding});
+    }
+  }
+  .level5 > & .sidenav-link {
+    padding-left: 6.875rem;
+    .toggle & {
+      padding-left: calc(6.875rem + #{$toggle-padding});
+    }
+  }
+
+  &.active {
+    & > .sidenav-link {
+      color: $sidenav-link-active-level;
+    }
+  }
+
+  .level0 > & {
+    & > .sidenav-link {
+      font-weight: 500;
+      color: $sidenav-link;
+      padding-left: px2rem(8);
+      border-left: px2rem(4) solid transparent;
+      @include transition;
+
+      &:hover {
+        color: $sidenav-link-hover;
+      }
+    }
+
+    &.active {
+      & > .sidenav-link {
+        color: $sidenav-link-active-level;
+        background: $sidenav-link-active-bg-level;
+        border-left: px2rem(4) $sidenav-link-active-level-border solid;
+        // padding-left: 1.625rem;
+
+        .fill {
+          fill: $sidenav-link-active-level;
+        }
+        .stroke {
+          stroke: $sidenav-link-active-level;
+        }
+      }
+    }
+  }
+
+  &.open {
+    & > .sidenav-toggle .open-icon {
+      transform: rotate(180deg);
+    }
+
+    & > .sidenav-menu {
+      display: flex;
+    }
+  }
+}
+
+.sidenav-menu {
+  display: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-left: 1px solid $sidenav-link-right-line;
+    top: 0;
+    bottom: 0;
+  }
+
+  .level0 &:after {
+    left: 1.875rem;
+  }
+  .level1 &:after {
+    left: 2.875rem;
+  }
+  .level2 &:after {
+    left: 3.875rem;
+  }
+  .level3 &:after {
+    left: 4.875rem;
+  }
+  .level4 &:after {
+    left: 5.875rem;
+  }
+  .level5 &:after {
+    left: 6.875rem;
+  }
+}
+
+.app-brand {
+  min-height: px2rem(92 - 24);
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  line-height: 1;
+  min-height: 1px;
+  padding: 1.75rem 1.875rem;
+
+  &-logo {
+    min-height: px2rem(40);
+    display: flex;
+    align-items: center;
+    img {
+      position: absolute;
+    }
+  }
+}
+
+.sidenav-divider {
+  border-bottom: 1px solid $sidenav-divider;
+  margin: px2rem(20) 0 0;
+  // margin: 0 0;
+}

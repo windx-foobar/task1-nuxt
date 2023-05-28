@@ -1,0 +1,45 @@
+.popover {
+  @if $enable-shadows {
+    @include box-shadow($popover-box-shadow);
+  } @else {
+    box-shadow: none;
+    // border: 1px solid $input-border-color;
+  }
+
+  &-calculation {
+    min-width: px2rem(300);
+    padding: px2rem(8) px2rem(16);
+  }
+  // @include border-radius($popover-border-radius);
+  // @include box-shadow(0px 4px 20px rgba(35, 31, 32, 0.16));
+  // box-shadow: 0px 4px 20px rgba(35, 31, 32, 0.16);
+}
+
+.bPopoverLayer {
+  display: none;
+  // background: rgba($black, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $zindex-popover - 1;
+  transition: all;
+  // filter: blur(4px);
+
+  &.visible {
+    display: block;
+  }
+}
+
+.tooltip .tooltip-inner {
+  color: $tooltip-color !important;
+  background-color: $tooltip-bg !important;
+
+  @if $enable-shadows {
+    @include box-shadow($popover-box-shadow);
+  } @else {
+    box-shadow: none;
+    border: 1px solid $input-border-color;
+  }
+}

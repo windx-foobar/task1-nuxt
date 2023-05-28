@@ -1,0 +1,123 @@
+// h1 {
+//   font-weight: $h1-font-weight;
+//   font-size: $h1-font-size * 0.75;
+//   line-height: $h1-line-height * 0.75;
+//   margin-bottom: 0;
+
+//   @include breakpoint(xl) {
+//     font-size: $h1-font-size;
+//     line-height: $h1-line-height;
+//   }
+// }
+
+// h2 {
+//   font-weight: $h2-font-weight;
+//   font-size: $h2-font-size * 0.75;
+//   line-height: $h2-line-height * 0.75;
+//   margin-bottom: 0;
+
+//   @include breakpoint(xl) {
+//     font-size: $h2-font-size;
+//     line-height: $h2-line-height;
+//   }
+// }
+
+// h3 {
+//   font-weight: $h3-font-weight;
+//   font-size: $h3-font-size * 0.75;
+//   line-height: $h3-line-height * 0.75;
+//   margin-bottom: 0;
+
+//   @include breakpoint(xl) {
+//     font-size: $h3-font-size;
+//     line-height: $h3-line-height;
+//   }
+// }
+
+// h4 {
+//   font-weight: $h4-font-weight;
+//   font-size: $h4-font-size * 0.75;
+//   line-height: $h4-line-height * 0.75;
+//   margin-bottom: 0;
+
+//   @include breakpoint(xl) {
+//     font-size: $h4-font-size;
+//     line-height: $h4-line-height;
+//   }
+// }
+
+@mixin sh-type($type-font-family, $type-font-weight, $type-font-size, $type-line-height) {
+  font-family: $type-font-family;
+  font-weight: $type-font-weight;
+  font-size: $type-font-size * 0.75;
+  line-height: $type-line-height * 0.75;
+  margin-bottom: 0;
+
+  @include breakpoint(xl) {
+    font-size: $type-font-size;
+    line-height: $type-line-height;
+  }
+}
+
+h1,
+.h1 {
+  @include sh-type($h1-font-family, $h1-font-weight, $h1-font-size, $h1-line-height);
+}
+
+h2,
+.h2 {
+  @include sh-type($h2-font-family, $h2-font-weight, $h2-font-size, $h2-line-height);
+}
+
+h3,
+.h3 {
+  @include sh-type($h3-font-family, $h3-font-weight, $h3-font-size, $h3-line-height);
+}
+
+h4,
+.h4 {
+  @include sh-type($h4-font-family, $h4-font-weight, $h4-font-size, $h4-line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include custom-control-sm;
+
+  .sh-input-wrapper {
+    display: inline-block;
+
+    legend {
+      display: none;
+    }
+    .form-group {
+      margin: 0;
+    }
+  }
+}
+
+.small {
+  @include custom-control-sm(0);
+}
+
+.text {
+  @include text;
+}
+.label {
+  @include label;
+}
+
+.font-weight-300 {
+  font-weight: 300 !important;
+}
+
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+
+body {
+  @extend .text;
+}

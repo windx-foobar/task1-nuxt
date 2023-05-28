@@ -1,0 +1,40 @@
+.nav-pills {
+  border: 1px solid rgba($primary, 0.4);
+  box-sizing: border-box;
+  display: inline-flex;
+  padding: px2rem(4 - 1);
+  @include border-radius($nav-pills-border-radius);
+
+  .nav-link {
+    padding: px2rem(6) px2rem(16);
+    font-weight: 500;
+  }
+
+  &.small .nav-link {
+    padding: px2rem(2) px2rem(8);
+    font-weight: 500;
+  }
+}
+
+.nav-links {
+  .nav-item {
+    margin: px2rem(8) px2rem(8) 0;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    a {
+      padding: 0;
+      border-bottom: 1px dashed;
+
+      &.active {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.tab-error a {
+  color: $form-feedback-invalid-color !important;
+}

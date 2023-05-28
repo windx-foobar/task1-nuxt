@@ -1,0 +1,12 @@
+.progress {
+  padding: 0.0625rem;
+
+  .progress-bar {
+    border-radius: $progress-border-radius;
+  }
+}
+.progress-bar-striped {
+  // @include gradient-striped(#fff, -45deg);
+  @include gradient-striped(rgba(#0645ad, 0.2), -60deg);
+  background-size: $progress-height * 1.5 $progress-height * 2;
+}

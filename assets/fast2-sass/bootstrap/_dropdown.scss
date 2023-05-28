@@ -1,0 +1,20 @@
+.dropdown {
+  .btn.dropdown-toggle + .dropdown-menu {
+    // .btn.dropdown-toggle.btn-text + .dropdown-menu {
+    border-color: transparent;
+
+    box-shadow: 0px 4px 20px rgba(35, 31, 32, 0.16);
+    border-radius: 0.375rem;
+    padding: 0;
+  }
+
+  .btn.dropdown-toggle.no-arrow {
+    &::after {
+      display: none;
+    }
+  }
+
+  .dropdown-item {
+    padding: px2rem(10) px2rem(24);
+  }
+}

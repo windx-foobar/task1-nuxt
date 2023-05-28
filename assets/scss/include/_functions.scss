@@ -1,0 +1,122 @@
+@use "sass:math";
+
+@import "node_modules/bootstrap/scss/functions";
+// *******************************************************************************
+// * Colors
+
+@function rgba-to-hex($color, $background: #fff) {
+  @if $color and alpha($color) != 1 {
+    $percent: alpha($color) * 100%;
+    $opaque: opacify($color, 1);
+
+    @return mix($opaque, $background, $percent);
+  } @else {
+    @return $color;
+  }
+}
+
+// *******************************************************************************
+// * Units
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function px2rem($value) {
+  @return math.div(strip-unit($value), 16) * 1rem;
+}
+
+@function rem2px($value) {
+  @return (strip-unit($value) * 16) * 1px;
+}
+
+// *******************************************************************************
+// * Utilities
+
+@function get-btn-colors($background, $border) {
+  @if $background == transparent {
+    $btn-shadow: rgba(rgba-to-hex($border, #000), 0.05);
+
+    @return (
+      bg-hover: rgba($border, 0.06),
+      bg-active: rgba($border, 0.12),
+      border: $border,
+      shadow:
+        if(
+          $enable-shadows,
+          ($btn-box-shadow, 0 0 0 $component-focus-shadow-width $btn-shadow),
+          0 0 0 $component-focus-shadow-width $btn-shadow
+        )
+    );
+  } @else if alpha($background) != 1 {
+    $bg-alpha: alpha($background);
+    $btn-shadow: rgba($background, $bg-alpha - ($bg-alpha * 55 * 0.01));
+
+    @return (
+      bg-hover: rgba($background, $bg-alpha + 0.05),
+      bg-active: rgba($background, $bg-alpha + 0.13),
+      border: transparent,
+      shadow:
+        if(
+          $enable-shadows,
+          ($btn-box-shadow, 0 0 0 $component-focus-shadow-width $btn-shadow),
+          0 0 0 $component-focus-shadow-width $btn-shadow
+        )
+    );
+  } @else {
+    @return (
+      bg-hover: rgba-to-hex(rgba($background, 0.95), #000),
+      bg-active: rgba-to-hex(rgba($background, 0.87), #000),
+      border: transparent,
+      shadow:
+        if(
+          $enable-shadows,
+          ($btn-box-shadow, 0 0 0 $component-focus-shadow-width rgba($background, 0.4)),
+          0 0 0 $component-focus-shadow-width rgba($background, 0.4)
+        )
+    );
+  }
+}
+
+@function get-nav-colors($bg, $active-color: null, $inactive-color: null, $border: null) {
+  $bg: rgba-to-hex($bg);
+  $active-color: rgba-to-hex($active-color);
+  $active-color: if($active-color, $active-color, yiq($bg));
+  $yiq-percent: math.div(yiq-value($bg), 255);
+  $yiq-percent-inverted: 1 - $yiq-percent;
+
+  $opacity: if($active-color == #fff, 0.6 + (0.4 * $yiq-percent), 0.6 + (0.4 * (1 - $yiq-percent)));
+
+  $color: if(
+    $inactive-color,
+    rgba-to-hex($inactive-color, $bg),
+    rgba-to-hex(rgba($active-color, if($yiq-percent < 0.25, $opacity - 0.15, $opacity)), $bg)
+  );
+  $disabled-color: rgba-to-hex(rgba($color, 0.6), $bg);
+  $muted-color: rgba-to-hex(rgba($color, 0.75), $bg);
+  $border: if(
+    $border,
+    $border,
+    if(
+      $yiq-percent > 0.75,
+      rgba($active-color, $opacity * 0.125),
+      if($yiq-percent < 0.25, rgba($active-color, 0.06), rgba($active-color, 0.15))
+    )
+  );
+
+  @return (
+    // Metadata
+      opacity: $opacity,
+    yiq-percent: $yiq-percent,
+    yiq-percent-inverted: $yiq-percent-inverted,
+    // Colors
+      bg: $bg,
+    color: $color,
+    active-color: $active-color,
+    disabled-color: $disabled-color,
+    muted-color: $muted-color,
+    border: $border
+  );
+}

@@ -1,0 +1,70 @@
+.sh-search {
+  width: px2rem(32);
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgba($gray-600, 0.4);
+  height: px2rem(24+7+1);
+  margin-top: px2rem(15-7);
+  @include transition();
+
+  &.opened {
+    width: px2rem(420);
+  }
+
+  &__input {
+    flex: 1;
+    background: transparent;
+    border-radius: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border: none;
+    padding: 0 0 0 px2rem(20);
+    height: px2rem(24);
+  }
+
+  &__icon {
+    position: absolute;
+    top: px2rem(4);
+    right: px2rem(8);
+    color: $gray-600;
+  }
+
+  // &__spinner {
+  //   position: absolute;
+  //   right: px2rem(4-1);
+  //   top: px2rem(10);
+  // }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: px2rem(24);
+    height: initial;
+    padding: 0;
+    margin-bottom: px2rem(7);
+
+    &__tag {
+      background: rgba($gray-600, 0.15);
+      border-radius: px2rem(3);
+      padding: 0 px2rem(8);
+      margin: 0 px2rem(8) 0 0;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: px2rem(16);
+      line-height: px2rem(24);
+      height: px2rem(24);
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .sh-icon {
+        margin-left: px2rem(12);
+      }
+    }
+  }
+}

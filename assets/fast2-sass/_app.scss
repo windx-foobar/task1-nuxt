@@ -1,0 +1,214 @@
+// @import "./sh/include";
+
+// @import "./debug";
+
+@import "./bootstrap/type";
+@import "./bootstrap/forms";
+@import "./bootstrap/buttons";
+@import "./bootstrap/dropdown";
+@import "./bootstrap/custom-forms";
+@import "./bootstrap/nav";
+@import "./bootstrap/card";
+@import "./bootstrap/pagination";
+@import "./bootstrap/badge";
+@import "./bootstrap/progress";
+@import "./bootstrap/modal";
+@import "./bootstrap/table";
+@import "./bootstrap/popover";
+
+@import "./ui/_old";
+@import "./ui/perfect-scrollbar";
+@import "./ui/widget";
+@import "./ui/vue-multiselect";
+@import "./ui/vue-slider-component";
+@import "./ui/vue2-datepicker";
+@import "./ui/vue-tags-input";
+@import "./ui/vue-simple-suggest";
+@import "./ui/vue-quill-editor/index";
+@import "./ui/sidebar-menu/vue-sidebar-menu";
+
+@import "./app/layout";
+
+@import "./app/ui/index";
+
+@import "./app/sidenav-menu";
+
+@import "./app/calculation";
+@import "./app/make-a-contract";
+
+body {
+  &.isDev {
+    &:before {
+      content: "Dev/test";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2000;
+      padding: 0 2px;
+      width: px2rem(30 * 2+40);
+      text-align: center;
+      background: yellow;
+      font-size: 10px;
+      line-height: 1.2;
+      height: 14px;
+    }
+  }
+  &.isStaging {
+    &:before {
+      content: "Staging";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2000;
+      padding: 0 2px;
+      width: px2rem(30 * 2+40);
+      text-align: center;
+      background: yellow;
+      font-size: 10px;
+      line-height: 1.2;
+      height: 14px;
+    }
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+.bg-gray-100 {
+  background: $gray-100;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.show-highlighter {
+  animation: highlight 1s;
+}
+@keyframes highlight {
+  0% {
+    background: rgba($yellow, 0.25);
+  }
+  100% {
+    background: none;
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+
+.contract_logs {
+  test: test;
+
+  svg {
+    fill: #1774e2;
+  }
+  svg:hover {
+    fill: #10509d;
+  }
+}
+
+@font-face {
+  font-family: "Corporate A";
+  src: url("/fonts/CorporateA/CorporateA-Regular.eot");
+  src: local("Corporate A Regular"), local("CorporateA-Regular"),
+    url("/fonts/CorporateA/CorporateA-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateA/CorporateA-Regular.woff") format("woff"),
+    url("/fonts/CorporateA/CorporateA-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-Light.eot");
+  src: local("Corporate S Light"), local("/fonts/CorporateS/CorporateS-Light"),
+    url("/fonts/CorporateS/CorporateS-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-Light.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-LightItalic.eot");
+  src: local("Corporate S Light Italic"), local("/fonts/CorporateS/CorporateS-LightItalic"),
+    url("/fonts/CorporateS/CorporateS-LightItalic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-LightItalic.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-Regular.eot");
+  src: local("Corporate S Regular"), local("/fonts/CorporateS/CorporateS-Regular"),
+    url("/fonts/CorporateS/CorporateS-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-Regular.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-Bold.eot");
+  src: local("Corporate S Bold"), local("/fonts/CorporateS/CorporateS-Bold"),
+    url("/fonts/CorporateS/CorporateS-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-Bold.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-BoldItalic.eot");
+  src: local("Corporate S Bold Italic"), local("/fonts/CorporateS/CorporateS-BoldItalic"),
+    url("/fonts/CorporateS/CorporateS-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-BoldItalic.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-DemiItalic.eot");
+  src: local("Corporate S Demi Italic"), local("/fonts/CorporateS/CorporateS-DemiItalic"),
+    url("/fonts/CorporateS/CorporateS-DemiItalic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-DemiItalic.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-DemiItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-Demi.eot");
+  src: local("Corporate S Demi"), local("/fonts/CorporateS/CorporateS-Demi"),
+    url("/fonts/CorporateS/CorporateS-Demi.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-Demi.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-Demi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporate S";
+  src: url("/fonts/CorporateS/CorporateS-Italic.eot");
+  src: local("Corporate S Italic"), local("/fonts/CorporateS/CorporateS-Italic"),
+    url("/fonts/CorporateS/CorporateS-Italic.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/CorporateS/CorporateS-Italic.woff") format("woff"),
+    url("/fonts/CorporateS/CorporateS-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}

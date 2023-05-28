@@ -1,0 +1,258 @@
+$ti-primary: rgba($gray-300, 0.4);
+$error: #e54d42;
+$success: #68cd86;
+$warn: #ffb648;
+
+@font-face {
+  font-family: "icomoon";
+  src: url("/fast2-fonts/icomoon/icomoon.eot?7grlse");
+  src: url("/fast2-fonts/icomoon/icomoon.eot?7grlse#iefix") format("embedded-opentype"),
+    url("/fast2-fonts/icomoon/icomoon.ttf?7grlse") format("truetype"),
+    url("/fast2-fonts/icomoon/icomoon.woff?7grlse") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ti-icon-"],
+[class*=" ti-icon-"] {
+  vertical-align: middle;
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-icon-check {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  font-size: 0.5em;
+  &:before {
+    content: "\e902";
+  }
+}
+
+.ti-icon-close {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  font-size: 0.5em;
+  &:before {
+    content: "\e901";
+  }
+}
+
+.ti-icon-undo {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  font-size: 0.5em;
+  &:before {
+    content: "\e900";
+  }
+}
+
+.ti-icon-undo:before {
+  content: "\e900";
+}
+
+.ti-icon-plus {
+  font-size: 0.5em;
+  &:before {
+    content: "\e903";
+  }
+}
+
+.ti-icon-driver-fill {
+  font-size: 0.75em;
+  &:before {
+    content: "\e904";
+  }
+}
+
+.ti-icon-swipe {
+  font-size: 0.75em;
+  &:before {
+    content: "\e905";
+  }
+}
+
+.vue-tags-input {
+  @extend .form-control;
+  // max-width: 450px;
+  padding: $input-padding-y 0;
+  // padding: $input-padding-y $input-padding-x;
+  position: relative;
+  background-color: transparent;
+  min-height: $input-height;
+  height: auto;
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input[disabled] {
+    background-color: transparent;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+
+    * {
+      cursor: default;
+    }
+  }
+
+  .ti-input {
+    border: none;
+    display: flex;
+    padding: none;
+    flex-wrap: wrap;
+    padding: 0 $input-padding-x;
+  }
+
+  .ti-tags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    line-height: 1em;
+  }
+
+  .ti-tag {
+    background-color: $ti-primary;
+    color: $input-color;
+    border-radius: 2px;
+    display: flex;
+    padding: 3px 5px;
+    margin: 2px;
+    font-size: 0.85em;
+
+    &:focus {
+      outline: none;
+    }
+
+    .ti-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .ti-tag-center {
+      position: relative;
+    }
+
+    span {
+      line-height: 0.85em;
+    }
+
+    span.ti-hidden {
+      padding-left: 14px;
+      visibility: hidden;
+      height: 0px;
+      white-space: pre;
+    }
+
+    .ti-actions {
+      margin-left: 2px;
+      display: flex;
+      align-items: center;
+      font-size: 1.15em;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    &:last-child {
+      margin-right: 4px;
+    }
+
+    &.ti-invalid,
+    &.ti-tag.ti-deletion-mark {
+      background-color: $error;
+    }
+  }
+
+  .ti-new-tag-input-wrapper {
+    display: flex;
+    flex: 1 0 auto;
+    padding: 3px 5px;
+    margin: 2px;
+    font-size: 0.85em;
+
+    input {
+      flex: 1 0 auto;
+      min-width: 100px;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+
+  .ti-new-tag-input {
+    line-height: initial;
+    background: transparent;
+  }
+
+  @include scroll(".ti-autocomplete");
+  .ti-autocomplete {
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: 20;
+    max-height: px2rem(300);
+    overflow: auto;
+    user-select: none;
+  }
+
+  .ti-item > div {
+    cursor: pointer;
+    padding: px2rem(4) $input-padding-x;
+    width: 100%;
+  }
+
+  .ti-selected-item {
+    background-color: map-get($theme-colors, "primary");
+    color: #fff;
+  }
+
+  .ti-tag-input {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    line-height: inherit;
+
+    &::-ms-clear {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &[disabled] {
+      background-color: transparent;
+    }
+  }
+}

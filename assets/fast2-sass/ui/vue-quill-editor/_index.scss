@@ -1,0 +1,5 @@
+@import '_quill.snow.scss';
+@import '_typography';
+@import '_editor';
+
+@include quill-theme($primary);

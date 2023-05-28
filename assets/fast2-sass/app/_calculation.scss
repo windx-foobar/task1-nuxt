@@ -1,0 +1,68 @@
+.bCalculationPopup {
+  .modal-header {
+    padding: px2rem(40) px2rem(40) 0;
+  }
+  .modal-body {
+    padding: px2rem(24) px2rem(40) px2rem(20);
+  }
+  &__header {
+    background: $gray-6;
+    padding: px2rem(8) px2rem(20);
+
+    h3 {
+      margin-bottom: px2rem(4);
+    }
+
+    p {
+      color: $gray-600;
+      margin-bottom: 0;
+    }
+  }
+
+  &__body {
+    padding: px2rem(20);
+    p {
+      margin-bottom: px2rem(12);
+    }
+  }
+}
+
+.shCalculationFilterPreset {
+  display: inline-flex;
+  margin-bottom: px2rem(24);
+
+  .nav-item {
+    // display: flex;
+    & + .nav-item {
+      position: relative;
+
+      .nav-link {
+        border-left: none;
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+
+      font-style: normal;
+      font-weight: 300;
+      font-size: px2rem(11);
+      line-height: px2rem(20);
+      border: 1px solid $border-color;
+      // min-height: px2rem(40);
+      padding: px2rem(10-1) px2rem(2);
+
+      // b {
+      //   font-weight: normal;
+      //   font-size: px2rem(12);
+      //   line-height: px2rem(18);
+      // }
+
+      &.active {
+        border-color: $primary;
+        // background: $gray-100;
+      }
+    }
+  }
+}

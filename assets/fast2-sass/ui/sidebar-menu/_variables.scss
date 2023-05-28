@@ -1,0 +1,36 @@
+$primary-color: $primary;
+$base-bg: $layout-sidenav-background;
+
+$item-color: $sidenav-link;
+
+$item-active-color: $sidenav-link-active-level;
+$item-active-bg: $sidenav-link-active-bg-level;
+
+$item-open-color: $sidenav-link-active-level;
+$item-open-bg: $layout-sidenav-background;
+
+$item-hover-color: $sidenav-link-active-level;
+$item-hover-bg: null;
+
+$icon-color: null;
+$icon-bg: $layout-sidenav-background;
+
+$icon-active-color: null;
+$icon-active-bg: null;
+
+$icon-open-color: null;
+$icon-open-bg: $item-open-bg;
+
+$mobile-item-color: $sidenav-link-active-level;
+$mobile-item-bg: transparent;
+$mobile-icon-color: $mobile-item-color;
+$mobile-icon-bg: $mobile-item-bg;
+
+$dropdown-bg: $layout-sidenav-background;
+$dropdown-color: null;
+
+$item-font-size: 16px;
+$item-line-height: 30px;
+$item-padding: 10px;
+$icon-height: 30px;
+$icon-width: 30px;

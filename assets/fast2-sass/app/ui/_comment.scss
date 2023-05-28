@@ -1,0 +1,36 @@
+.bComment {
+  padding: px2rem(16) px2rem(20-8) 0 0;
+
+  &.own {
+    .bComment__text {
+      text-align: right;
+    }
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &__author,
+  &__date {
+    @include label;
+    color: $gray-600;
+  }
+  &__text {
+    @include label;
+    word-break: break-word;
+  }
+
+  & + & {
+    border-top: 1px solid $gray-6;
+  }
+
+  &.underwriting {
+    border: 1px solid rgba(148, 152, 153, 0.4);
+    box-sizing: border-box;
+    border-radius: px2rem(3);
+    padding: px2rem(8) px2rem(12);
+    margin: 0 0 px2rem(12);
+    background: white;
+  }
+}

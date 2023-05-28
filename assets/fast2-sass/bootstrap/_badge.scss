@@ -1,0 +1,21 @@
+.badge {
+  line-height: $badge-line-height;
+
+  &.badge-default {
+    background: $badge-background;
+  }
+
+  &.badge-success {
+    background: rgba(#219653, 0.1);
+    color: #219653;
+  }
+
+  &.badge-warning {
+    background: rgba(#f2c94c, 0.1);
+    color: #ffbb38;
+  }
+}
+
+a.badge.badge-default {
+  color: inherit;
+}

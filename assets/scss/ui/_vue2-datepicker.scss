@@ -1,0 +1,39 @@
+@import 'node_modules/vue2-datepicker/scss/index.scss';
+
+.mx-datepicker {
+  width: 100%;
+}
+.mx-datepicker-popup {
+  z-index: 1061;
+}
+
+.mx-calendar-content .cell {
+  &.active {
+    background-color: $primary;
+  }
+
+  &:hover {
+    color: $primary;
+    background-color: rgba($primary, 0.08);
+  }
+}
+
+.mx-datepicker .mx-icon-calendar,
+.mx-datepicker .mx-icon-clear {
+  color: $datepicker-icon-color;
+  background-color: $datepicker-icon-background-color;
+}
+
+.mx-datepicker-main {
+  // color: $primary;
+
+  .today {
+    color: rgba($primary, 0.7);
+  }
+}
+
+.mx-calendar-header {
+  .mx-btn:hover {
+    color: $primary;
+  }
+}

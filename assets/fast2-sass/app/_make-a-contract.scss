@@ -1,0 +1,26 @@
+.contract-upload-files {
+  min-height: 6.25rem;
+
+  .custom-file-label {
+    min-height: 6.25rem;
+  }
+}
+
+.bContract {
+  &__title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: px2rem(22);
+    line-height: px2rem(20);
+    display: inline-block;
+  }
+}

@@ -1,0 +1,363 @@
+$custom-control-indicator-size: px2rem(20);
+$form-group-margin-bottom: px2rem(20);
+
+$col-form-label-color: #4b535a;
+$col-form-label-font-weight: 500;
+$col-form-label-padding-bottom: 0;
+$col-form-label-font-size: px2rem(11);
+
+$table-accent-bg: #f1f8ff;
+
+$layout-inner-background: whitesmoke;
+
+$theme-colors: (
+  "blue": #1774e2,
+  "orange": #ffbb38,
+  "gray": #949899,
+);
+
+//
+$appX: 20 !default;
+$sidenav: 300 !default;
+$sidenavMin: 100 !default;
+$navbar: 60 !default;
+$maxWidt: (1240 + $sidenav) !default;
+$rightWidth: (320 - 20) !default;
+$contentWidth: 1360 !default;
+
+$contentRight: $appX * 20 !default;
+
+$contentRightLg: $appX * 17 !default;
+$contentRightXl: $contentRight !default;
+
+// -------------------------------------------------------------------------------------------------------------
+
+// bootstrap
+$enable-shadows: true !default;
+$enable-validation-icons: false !default;
+$enable-progress-bar-striped: true !default;
+
+// $enable-responsive-font-sizes: true !default;
+$lab-gray-100: #f6f6f6;
+//
+$gray-100: $lab-gray-100 !default;
+$gray-600: #949899 !default;
+$gray-900: #231f20 !default;
+$gray-5: #e0e0e0;
+$gray-6: #f2f2f2;
+$gray-7: #fafbfb;
+
+$white: #fff !default;
+$blue: #1774e2 !default;
+$red: #eb5757 !default;
+$yellow: #ffbb38 !default;
+$green: #219653 !default;
+$black: #000 !default;
+
+$danger: $red !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "danger": $danger,
+    "lab-gray-100": $lab-gray-100,
+  ),
+  $theme-colors
+);
+
+$primary: $blue !default;
+
+$font-weight-normal: 400 !default;
+
+$paragraph-margin-bottom: px2rem(8) !default;
+
+$grid-gutter-width: 20px !default;
+
+$border-radius: px2rem(4) !default;
+$border-radius-lg: px2rem(5) !default;
+$border-radius-sm: px2rem(3) !default;
+
+// Typography
+//
+$font-family-sans-serif: "Cera Pro", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$h1-font-weight: 300 !default;
+$h1-font-size: px2rem(24) !default;
+$h1-line-height: px2rem(40) !default;
+$h1-font-family: $font-family-sans-serif !default;
+
+$h2-font-weight: 500 !default;
+$h2-font-size: px2rem(22) !default;
+$h2-line-height: px2rem(24) !default;
+$h2-font-family: $font-family-sans-serif !default;
+
+$h3-font-weight: 500 !default;
+$h3-font-size: px2rem(16) !default;
+$h3-line-height: px2rem(24) !default;
+$h3-font-family: $font-family-sans-serif !default;
+
+$h4-font-weight: 300 !default;
+$h4-font-size: px2rem(16) !default;
+$h4-line-height: px2rem(24) !default;
+$h4-font-family: $font-family-sans-serif !default;
+
+$input-box-shadow: none !default;
+
+// Buttons
+$btn-primary-hover: darken($primary, 10%) !default;
+$btn-primary-active: darken($primary, 12%) !default;
+$btn-primary-hover-shadow: 0px 6px 16px rgba(23, 116, 226, 0.4) !default;
+$btn-box-shadow: none !default;
+$btn-active-box-shadow: none !default;
+
+$input-btn-padding-y: px2rem(7) !default;
+$input-btn-padding-x: px2rem(15) !default;
+$input-btn-focus-width: 0 !default;
+$input-btn-focus-box-shadow: none !default;
+
+$btn-box-shadow: 0px 4px 8px rgba(23, 116, 226, 0.2) !default;
+
+$label-disabled-color: rgba($gray-900, 0.4) !default;
+$input-padding-y: px2rem(7) !default;
+$input-disabled-bg: rgba(222, 226, 230, 0.2) !default;
+$input-color: $gray-900 !default;
+$input-border-color: rgba($gray-600, 0.4) !default;
+$input-hover-border-color: $gray-600 !default;
+$input-focus-border-color: $gray-600 !default;
+
+$form-text-margin-top: 0 !default;
+$form-group-margin-bottom: px2rem(20) !default;
+
+$custom-control-height: px2rem(20) !default;
+
+$custom-control-gutter: 0 !default;
+$custom-control-indicator-size: px2rem(18) !default;
+$custom-control-indicator-bg-size: px2rem(8) px2rem(8) !default;
+$custom-control-label-color: $gray-900 !default;
+// $custom-control-indicator-bg-size: 50% 50% !default;
+$custom-control-indicator-border-color: rgba($gray-600, 0.4) !default;
+$custom-control-indicator-checked-border-color: $custom-control-indicator-border-color !default;
+$custom-control-label-disabled-color: rgba($gray-900, 0.4) !default;
+$custom-control-indicator-checked-color: $white !default;
+$custom-checkbox-indicator-icon-checked: str-replace(
+  url("data:image/svg+xml,%3csvg fill='none' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.79.212a.708.708 0 00-1.01 0l-3.9 3.949-1.66-1.682a.708.708 0 00-1.01 0 .73.73 0 000 1.024l1.66 1.681.66.668a.492.492 0 00.702 0l.66-.668L7.79 1.236a.73.73 0 000-1.024z' fill='#{$custom-control-indicator-checked-color}'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+
+$custom-checkbox-indicator-indeterminate-color: $white !default;
+$custom-checkbox-indicator-icon-indeterminate: str-replace(
+  url("data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 3'%3e%3cpath d='M7.25.996a.75.75 0 010 1.5H.75a.75.75 0 110-1.5h6.5z' fill='#{$custom-checkbox-indicator-indeterminate-color}'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+/*
+data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 9'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.95.996a.75.75 0 00-.75.75v2.25H.75a.75.75 0 000 1.5H3.2v2.75a.75.75 0 101.5 0v-2.75h2.55a.75.75 0 100-1.5H4.7v-2.25a.75.75 0 00-.75-.75z' fill='#{$custom-checkbox-indicator-indeterminate-color}'/%3e%3c/svg%3e
+*/
+
+$custom-checkbox-indicator-border-radius: 2px !default;
+
+$custom-control-indicator-radio-bg-color: $white !default;
+$custom-control-indicator-radio-checked-color: $primary !default;
+$custom-radio-indicator-icon-checked: str-replace(
+  url("data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3ccircle cx='4' cy='4' r='4' fill='#{$custom-control-indicator-radio-checked-color}'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+
+$form-feedback-valid-color: $input-border-color !default;
+$form-feedback-invalid-bg: rgba($danger, 0.08) !default;
+
+$nav-pills-border-radius: px2rem(24) !default;
+
+$dropdown-padding-y: 0 !default;
+
+$card-spacer-y: px2rem(17) !default;
+$card-spacer-x: px2rem(40) !default;
+$card-body-spacer-y: px2rem(24) !default;
+$card-body-spacer-x: $card-spacer-x !default;
+
+$badge-background: rgba($gray-600, 0.15) !default;
+$badge-font-size: px2rem(14) !default;
+$badge-line-height: px2rem(20) !default;
+$badge-font-weight: $font-weight-normal !default;
+$badge-padding-y: px2rem(2) !default;
+$badge-padding-x: px2rem(8) !default;
+$badge-border-radius: px2rem(3) !default;
+
+$modal-content-border-color: transparent !default;
+$modal-content-border-width: 0 !default;
+$modal-content-border-radius: px2rem(6) !default;
+$modal-backdrop-bg: rgba($black, 0.6) !default;
+
+$progress-height: px2rem(20) !default;
+$progress-bg: $gray-100 !default;
+$progress-border-radius: px2rem(6) !default;
+$progress-box-shadow: none !default;
+//
+//
+//
+
+$grid-breakpoints: (
+  // xs: 0,
+  // sm: 576px,
+  // md: 768px,
+  // lg: 992px,
+  // xl: 1200px,
+  // xxl: 1441px,
+  xs: 0,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px
+) !default;
+
+$xs-max-width: map-get($grid-breakpoints, "sm") - 1 !default;
+$sm-min-width: map-get($grid-breakpoints, "sm");
+$md-min-width: map-get($grid-breakpoints, "md");
+$lg-min-width: map-get($grid-breakpoints, "lg");
+$xl-min-width: map-get($grid-breakpoints, "xl");
+$xxl-min-width: map-get($grid-breakpoints, "xxl");
+
+$appX: 20 !default;
+$sidenav: 300 !default;
+$sidenavMin: 100 !default;
+$navbar: 60 !default;
+$maxWidt: (1240 + $sidenav) !default;
+$rightWidth: (320 - 20) !default;
+$contentWidth: 1360 !default;
+
+$contentRight: $appX * 20 !default;
+
+$border-width: 1px !default;
+
+// кастомизация
+$layout-sidenav-background: #fff !default;
+$layout-inner-background: $gray-7 !default;
+$sidenav-link-active-level: $gray-900 !default;
+$sidenav-link-active-bg-level: $gray-100 !default;
+$sidenav-link-active-level-border: $primary !default;
+
+$sidenav-link: $gray-600 !default;
+$sidenav-link-hover: $gray-900 !default;
+$sidenav-open-icon: $sidenav-link !default;
+$sidenav-link-right-line: rgba($sidenav-link, 0.2) !default;
+
+$sidenav-item-level1-background: $layout-sidenav-background !default;
+$sidenav-link-toggle-background: $layout-sidenav-background !default;
+
+$sidenav-divider: $gray-100 !default;
+
+$card-cap-bg: $white !default;
+$card-border-radius: px2rem(6) !default;
+$card-header-bg: map-get($theme-colors, "lab-gray-100");
+
+// Tooltips
+$tooltip-font-size: $font-size-sm !default;
+$tooltip-max-width: 200px !default;
+$tooltip-color: $black !default;
+$tooltip-bg: $white !default;
+$tooltip-border-radius: $border-radius !default;
+$tooltip-opacity: 0.9 !default;
+$tooltip-padding-y: 0.25rem !default;
+$tooltip-padding-x: 0.5rem !default;
+$tooltip-margin: 0 !default;
+// Popovers
+// $popover-font-size: $font-size-sm !default;
+$popover-bg: $white !default;
+$popover-max-width: px2rem(276) !default;
+
+// $popover-border-radius:             $border-radius-lg !default;
+$popover-box-shadow: 0px 4px 20px rgba(35, 31, 32, 0.16) !default;
+$popover-header-bg: $white !default;
+// $popover-header-color:              $headings-color !default;
+$popover-header-padding-y: 0 !default;
+$popover-header-padding-x: 0 !default;
+
+// $popover-body-color: $white !default;
+// $popover-body-padding-y:            $popover-header-padding-y !default;
+// $popover-body-padding-x:            $popover-header-padding-x !default;
+
+$popover-arrow-width: px2rem(16) !default;
+$popover-arrow-height: px2rem(8) !default;
+$popover-arrow-color: $popover-bg !default;
+//
+$popover-border-width: if($enable-shadows, 0, $border-width) !default;
+$popover-border-color: if($enable-shadows, $white, rgba($black, 0.2)) !default;
+$popover-arrow-outer-color: if($enable-shadows, $white, fade-in($popover-border-color, 0.05)) !default;
+
+// Tables
+$inactive-order-color: rgba($gray-600, 0.5) !default;
+$active-order-color: $primary !default;
+$b-table-sort-icon-bg-not-sorted: str-replace(
+  url("data:image/svg+xml,%3csvg width='8' height='18' viewBox='0 0 8 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.15686 16.9303L7.96648 12.2529C8.00667 12.2034 8.01086 12.1392 7.97829 12.0863C7.94534 12.0332 7.88057 12 7.80971 12L0.190481 12C0.119622 12 0.0546683 12.0332 0.0217151 12.0863C0.00723854 12.1098 -1.58747e-07 12.1356 -1.59868e-07 12.1613C-1.61271e-07 12.1934 0.0114291 12.2253 0.0337153 12.2529L3.84333 16.9303C3.87895 16.974 3.93743 17 4.0001 17C4.06276 17 4.12124 16.9739 4.15686 16.9303Z' fill='#{$inactive-order-color}' /%3e%3crect x='3' y='5' width='2' height='7' fill='#{$inactive-order-color}'/%3e%3cpath d='M3.84314 0.069677L0.033521 4.7471C-0.00667044 4.79661 -0.010861 4.86081 0.0217112 4.91371C0.0546644 4.96677 0.119428 5 0.190287 5L7.80952 5C7.88038 5 7.94533 4.96677 7.97828 4.91371C7.99276 4.89016 8 4.86435 8 4.83871C8 4.80661 7.98857 4.77468 7.96628 4.7471L4.15667 0.069677C4.12105 0.0259674 4.06257 -2.64479e-07 3.9999 -2.65226e-07C3.93723 -2.65973e-07 3.87876 0.0261286 3.84314 0.069677Z' fill='#{$inactive-order-color}'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+$b-table-sort-icon-bg-ascending: str-replace(
+  url("data:image/svg+xml,%3csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 14'%3e%3cpath d='M4.159 12.93l3.81-4.677a.141.141 0 00.011-.167A.197.197 0 007.812 8H.192a.198.198 0 00-.168.086.143.143 0 00-.022.075c0 .032.011.064.034.092l3.81 4.677c.035.044.093.07.156.07a.202.202 0 00.157-.07z' fill='#{$active-order-color}'/%3e%3cpath fill='#{$active-order-color}' d='M3 1h2v7H3z'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+$b-table-sort-icon-bg-descending: str-replace(
+  url("data:image/svg+xml,%3csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.84118 1.06968L0.0315679 5.7471C-0.00862358 5.79661 -0.0128142 5.86081 0.0197581 5.91371C0.0527112 5.96677 0.117475 6 0.188334 6L7.80757 6C7.87843 6 7.94338 5.96677 7.97633 5.91371C7.99081 5.89016 7.99805 5.86435 7.99805 5.83871C7.99805 5.80661 7.98662 5.77468 7.96433 5.7471L4.15472 1.06968C4.1191 1.02597 4.06062 0.999999 3.99795 0.999999C3.93528 0.999999 3.8768 1.02613 3.84118 1.06968Z' fill='#{$active-order-color}'/%3e%3crect x='5' y='13' width='2' height='7' transform='rotate(180 5 13)' fill='#{$active-order-color}'/%3e%3c/svg%3e"),
+  "#",
+  "%23"
+) !default;
+
+$table-cell-padding-y: px2rem(12) !default;
+$table-cell-padding-x: px2rem(20) !default;
+$table-thead-cell-padding-y: px2rem(18) !default;
+$table-thead-cell-padding-x: px2rem(20) !default;
+$table-thead-font-weight: 500;
+$table-thead-font-size: px2rem(16);
+// $table-cell-padding-sm:       .3rem !default;
+
+// $table-color:                 $body-color !default;
+$table-bg: $white !default;
+$table-accent-bg: rgba($gray-7, 0.4) !default;
+// $table-hover-color:           $table-color !default;
+// $table-hover-bg:              rgba($black, .075) !default;
+// $table-active-bg:             $table-hover-bg !default;
+
+// $table-border-width:          $border-width !default;
+$table-border-color: $gray-100 !default;
+
+// $table-head-bg:               $gray-200 !default;
+// $table-head-color:            $gray-700 !default;
+
+// $table-striped-order:         odd !default;
+
+// $table-caption-color:         $text-muted !default;
+
+// $table-bg-level:              -9 !default;
+// $table-border-level:          -6 !default;
+
+// Pagination
+
+$pagination-font-size: px2rem(16) !default;
+$pagination-font-weight: 500 !default;
+$pagination-padding-y: px2rem(20) !default;
+$pagination-padding-x: px2rem(20) !default;
+$pagination-margin-x: px2rem(5) !default;
+$pagination-color: $gray-600 !default;
+$pagination-bg: transparent !default;
+$pagination-border-color: transparent !default;
+$pagination-hover-color: $gray-600 !default;
+$pagination-hover-bg: rgba($gray-600, 0.15) !default;
+$pagination-hover-border-color: transparent !default;
+$pagination-disabled-border-color: transparent !default;
+$pagination-border-width: px2rem(2) !default;
+$pagination-active-color: $black !default;
+$pagination-active-bg: transparent !default;
+$pagination-active-border-color: $primary !default;
+
+$datepicker-icon-color: $primary !default;
+$datepicker-icon-background-color: $white !default;

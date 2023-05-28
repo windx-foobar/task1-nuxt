@@ -1,0 +1,249 @@
+.sh-input-wrapper {
+  &.inline {
+    fieldset {
+      legend,
+      & > div {
+        display: inline-block;
+        width: auto;
+      }
+      legend {
+        float: left;
+        margin-right: px2rem(16);
+      }
+    }
+  }
+
+  &.empty {
+    & > fieldset.form-group {
+      margin-bottom: 0;
+
+      & > div > .input-slot {
+        height: 1px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .input-slot {
+    position: relative;
+
+    .form-control.has-clear {
+      padding-right: px2rem(40);
+    }
+
+    .max-clear {
+      position: absolute;
+      top: 42%;
+      right: 45px;
+    }
+
+    &__clear {
+      position: absolute;
+      border-radius: 4px;
+      width: 40px;
+      height: 38px;
+      right: 1px;
+      top: 1px;
+      background: transparent;
+      display: flex;
+      padding: 4px 8px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+  }
+}
+
+.fix-bottom-margin {
+  fieldset {
+    margin-bottom: 0;
+  }
+}
+
+.form-group {
+  position: relative;
+
+  &[nolabel] .col-form-label {
+    padding: 0;
+  }
+
+  legend {
+    &:empty {
+      display: none;
+    }
+    @include custom-control-sm;
+
+    .btn.btn-link {
+      font-size: inherit;
+      padding: 0;
+      border-width: 0;
+      line-height: inherit;
+    }
+
+    .sh-input-wrapper {
+      display: inline-block;
+
+      legend {
+        display: none;
+      }
+      .form-group {
+        margin: 0;
+      }
+    }
+  }
+
+  .description {
+    padding-top: px2rem(14);
+
+    &:empty {
+      display: none;
+    }
+    @include custom-control-sm(0);
+  }
+
+  // &.inline {
+  //   display: flex;
+
+  //   legend {
+  //     width: initial;
+  //   }
+  // }
+
+  // &.is-valid {
+  //   .form-control {
+  //   }
+  // }
+  &.is-invalid {
+    .form-control {
+      background-color: $form-feedback-invalid-bg;
+      border-color: $form-feedback-invalid-color;
+    }
+  }
+
+  &:not(:disabled).hover,
+  &:not(:disabled):not(.is-invalid):hover {
+    .form-control:not(.focus) {
+      border-color: $input-hover-border-color;
+    }
+  }
+
+  &[disabled] {
+    .custom-control-label:before,
+    .custom-control-label:after,
+    input {
+      cursor: not-allowed;
+    }
+
+    // pointer-events: all !important;
+    .col-form-label {
+      // color: $label-disabled-color;
+    }
+    .input-slot {
+      cursor: not-allowed;
+    }
+  }
+
+  .form-control-description {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: #{10+14}px;
+    height: 1px;
+    display: block;
+  }
+}
+
+.col-form-label {
+  padding-top: 0;
+  padding-bottom: px2rem(4);
+  font-size: px2rem(10);
+  line-height: px2rem(16);
+  font-weight: 300;
+  text-transform: uppercase;
+
+  &_fix {
+    line-height: px2rem(10);
+  }
+
+  .sh-input-wrapper {
+    text-transform: none;
+    height: 16px;
+    vertical-align: bottom;
+
+    .form-control-description {
+      display: none;
+    }
+
+    .custom-control.custom-checkbox {
+      font-size: px2rem(10);
+      line-height: px2rem(16);
+      min-height: px2rem(16);
+    }
+
+    .custom-control .custom-control-label::before,
+    .custom-control .custom-control-label::after {
+      top: 0;
+    }
+  }
+}
+
+.form-control {
+  &:disabled,
+  &[readonly] {
+    color: $gray-600;
+  }
+
+  &.was-focused {
+    border-color: rgba($primary, 0.4);
+    color: $primary;
+  }
+
+  &.focus {
+    outline: 0;
+  }
+
+  &.is-valid {
+    &.focus {
+      color: $input-focus-color;
+      border-color: $input-focus-border-color;
+    }
+  }
+}
+
+.popover {
+  .modal-open & {
+    z-index: 106;
+  }
+
+  &.b-popover-invalid-feedback {
+    border-color: transparent;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    .arrow::before {
+      display: none;
+    }
+
+    .popover-body {
+      color: $red;
+      font-weight: 300;
+      font-size: px2rem(12);
+      padding: px2rem(8) px2rem(16);
+    }
+  }
+
+  &.b-popover-description {
+    border-color: transparent;
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(35, 31, 32, 0.16);
+
+    .arrow::before {
+      display: none;
+    }
+
+    .popover-body {
+      padding: px2rem(8) px2rem(12);
+    }
+  }
+}

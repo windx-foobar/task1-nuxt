@@ -1,0 +1,52 @@
+.suggest-loaader {
+  position: absolute;
+  right: px2rem(6);
+  top: px2rem(12);
+  opacity: 0.4;
+}
+
+.vue-simple-suggest-is-invalid {
+  .form-control {
+    background-color: transparent;
+    border-color: $form-feedback-invalid-color;
+  }
+}
+
+.bOptionsWrap {
+  border: 1px solid #ccc;
+  border-top: none;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  z-index: 20;
+  max-height: px2rem(300);
+  overflow: auto;
+  display: block;
+}
+@include scroll(".bOptions");
+.bOptions {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  font-size: px2rem(16);
+  line-height: 1.5;
+
+  @extend .bOptionsWrap;
+  top: 27 + 7px;
+
+  &__item {
+    padding: 0;
+    margin: 0;
+    & > * {
+      cursor: pointer;
+      padding: px2rem(4) $input-padding-x;
+      width: 100%;
+      display: block;
+    }
+
+    &.hover {
+      background-color: map-get($theme-colors, "primary");
+      color: #fff;
+    }
+  }
+}
